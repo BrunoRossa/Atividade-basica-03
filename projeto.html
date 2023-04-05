@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calcular média de uma lista de números</title>
+  </head>
+  <body>
+    <h1>Calcular média de uma lista de números</h1>
+    <label for="numbers-input">Digite uma lista de números (separados por vírgula):</label>
+    <input type="text" id="numbers-input">
+    <button id="calculate-btn" onclick="calcular()">Calcular</button>
+    <p id="result"></p>
+
+    <script>
+      function calcular() {
+        let numbers = document.getElementById("numbers-input").value.split(",");
+        let media = calcularMedia(numbers);
+        document.getElementById("result").textContent = "A média é " + media.toFixed(2);
+      }
+
+      function calcularMedia(numeros) {
+        let soma = numeros.reduce((a, b) => a + b);
+        return soma / numeros.length;
+      }
+    </script>
+  </body>
+</html>
